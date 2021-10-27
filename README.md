@@ -1,10 +1,14 @@
 # Async Tokio Server Experiment
 
 This is a small experimental Rust server that implements a very primitive
-prototype of the Redis protocol and can reply OK to commands. It's functionally
+prototype of the Redis protocol. It fully parses commands sent to it and can
+reply OK (without carrying out the commands themselves). It's functionally
 extremely primitive (and without even unit testing), but it has been profiled
 and highly optimized. The whole point is to learn more Rust and check out how
 easy it is to achieve similar performance to C and C++.
+
+In short, it's a tiny Redis protocol server with a high-performance parser,
+built for learning purposes.
 
 Run it with `cargo run --release`.
 
