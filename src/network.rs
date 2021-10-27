@@ -10,11 +10,8 @@ pub type Reader<R> = RingBufReader<R, 8196>;
 #[derive(Clone, Debug, PartialEq)]
 pub enum RedisValue {
     Array(Vec<RedisValue>),
-    SimpleString(StringVec),
     String(StringVec),
     Integer(i64),
-    Error(StringVec),
-    Null,
 }
 
 #[derive(Clone, Debug, PartialEq)]

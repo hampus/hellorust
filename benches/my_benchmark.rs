@@ -2,8 +2,8 @@ use criterion::{criterion_group, criterion_main, Criterion};
 use hellotokio::network;
 use tokio::io::BufReader;
 
-fn reader_from_string(text: &str) -> BufReader<&[u8]> {
-    BufReader::new(text.as_bytes())
+fn reader_from_string(text: &str) -> network::Reader<BufReader<&[u8]>> {
+    network::Reader::new(BufReader::new(text.as_bytes()))
 }
 
 pub fn criterion_benchmark(c: &mut Criterion) {
